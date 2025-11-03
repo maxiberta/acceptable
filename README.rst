@@ -1,6 +1,3 @@
-|Build Status| |Coverage Status|
-
-==========
 acceptable
 ==========
 
@@ -22,8 +19,6 @@ Design Goals:
 - Provide tools for developers to make safe changes to APIs
 
 - Make it easy to generate API documentation.
-
-- Tools for generating testing doubles from the API metadata.
 
 
 Usage
@@ -85,13 +80,11 @@ Acceptable will generate a JSON schema representation of the form for documentat
 To generate API metadata, you should add 'acceptable' to INSTALLED_APPS. This
 will provide an 'acceptable' management command::
 
-
     ./manage.py acceptable metadata > api.json   # generate metadata
 
 And also::
 
     ./manage.py acceptable api-version api.json  # inspect the current version
-
 
 
 Documentation (beta)
@@ -111,6 +104,7 @@ This markdown is designed to rendered to html by
 `documentation-builder <https://docs.ubuntu.com/documentation-builder/en/>`::
 
     documentation-builder --base-directory docs
+
 
 Includable Makefile
 -------------------
@@ -149,3 +143,17 @@ conditions exist you can put this in your make file::
 
     include $(shell $(ENV)/bin/python -c 'import pkg_resources; print(pkg_resources.resource_filename("acceptable", "make/Makefile.acceptable"))' 2> /dev/null)
 
+Development
+-----------
+
+``make test`` and ``make tox`` should run without errors.
+
+To run a single test module invoke::
+
+    env/bin/pytest acceptable/tests/test_module.py
+
+or::
+
+    tox -epy38 -- --test-suite acceptable.tests.test_module
+
+...the latter runs "test_module" against Python 3.8 only.

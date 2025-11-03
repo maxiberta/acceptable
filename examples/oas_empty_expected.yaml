@@ -1,0 +1,12 @@
+info:
+  contact:
+    email: example@example.example
+    name: ''
+  description: None
+  title: None
+  version: 0.0.None
+openapi: 3.1.0
+paths: {}
+servers:
+- url: http://localhost
+tags: []

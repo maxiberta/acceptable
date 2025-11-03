@@ -1,6 +1,10 @@
-future
+black < 23.0.0
 coveralls
+flake8
 fixtures
+isort
+pytest
+pytest-cov
 testscenarios
 testtools
 responses

@@ -1,3 +1,53 @@
+Version Next
+
+
+
+Version 0.42
+
+  * Improve Openapi service descriptions
+
+Version 0.41
+
+ * Add support for Python 3.12
+
+Version 0.40
+
+ * Port test runner to pytest.
+ * Fix compatibility issue with Werkezeug 3 related to deprecated ``request.charset``.
+ * Drop service doubles and mocks, and ``acceptable doubles``. Use the OpenAPI spec with tools such as Connexion instead.
+
+Version 0.39
+
+ * Assorted fixes and improvements in generated OpenAPI specs
+ * Extend generated OpenAPI specs with support for query params (fixes #149)
+ * Code cleanup with `flake8`
+ * Reformat code with `isort`
+
+Version 0.38
+
+ * Add new Django command ``openapi``. Generates ``openapi.yaml``
+ * Update format when a single endpoint supports multiple methods.
+ * 📢 Please note! operationId now includes both the endpoint name and the method. For example, ``validation-get`` instead of ``validation``. This allows multiple methods on a single endpoint, such as ``validation-post`` and ``validation-get``.
+
+Version 0.37
+
+ * Sort tags to stabilise YAML order
+ * Fix OpenAPI spec output when a single endpoint supports multiple methods
+
+Version 0.36
+
+ * Codebase is blackened
+ * ``lint --create`` will also generate a valid but incomplete ``openapi.yaml``:
+
+   * includes paths, methods, path parameters, request schema, response schema
+   * operations include operationId, description and summary (if found)
+   * group names are included as tags
+   * version is given as 0.0.V where V is the version number
+
+Version 0.33
+
+ * Drop support for Python < 3.8, so only Ubuntu 20.04 LTS and 22.04 LTS.
+
 Version 0.27
 
  * Improvements to the includable make file.

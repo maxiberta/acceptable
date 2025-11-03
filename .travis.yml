@@ -1,13 +1,12 @@
 language: python
 cache: pip
-dist: trusty
+dist: xenial
 sudo: False
 python:
-    - 2.7
     - 3.5
     - 3.6
 install: 
-    - pip install tox-travis "six>=1.14.0"
+    - pip install tox-travis
 script: tox
 after_success:
   - coveralls

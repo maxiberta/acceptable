@@ -1,0 +1,13 @@
+[tool.black]
+skip-string-normalization = true
+skip-magic-trailing-comma = true
+
+[tool.isort]
+profile = "black"
+skip = ["env", ".tox"]
+
+[tool.pytest.ini_options]
+addopts = "--cov=acceptable"
+
+[tool.coverage.report]
+omit = ["acceptable/tests/*"]

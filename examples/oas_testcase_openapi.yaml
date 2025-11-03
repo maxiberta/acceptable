@@ -1,0 +1,74 @@
+info:
+  contact:
+    email: example@example.example
+    name: ''
+  description: OpenApiSample
+  title: OpenApiSample
+  version: 0.0.5
+openapi: 3.1.0
+paths:
+  /foo/{p}/{q}:
+    get:
+      description: Documentation goes here.
+      operationId: foo-get
+      parameters:
+      - in: path
+        name: p
+        required: true
+        schema:
+          type: int
+      - in: path
+        name: q
+        required: true
+        schema:
+          type: str
+      - in: query
+        name: param1
+        required: true
+        schema:
+          type: string
+      - in: query
+        name: param2
+        required: false
+        schema:
+          type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                baz:
+                  description: Bar the door.
+                  introduced_at: 4
+                  properties:
+                    bar:
+                      description: asdf
+                      introduced_at: 5
+                      type: string
+                  type: object
+                foo:
+                  description: This is a foo.
+                  type: string
+              required:
+              - foo
+              - baz
+              type: object
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  bar:
+                    description: bar bar
+                    introduced_at: 5
+                    type: string
+                  foo_result:
+                    description: Result of a foo.
+                    type: string
+                type: object
+          description: OK
+      tags: []
+servers:
+- url: http://localhost
+tags: []
